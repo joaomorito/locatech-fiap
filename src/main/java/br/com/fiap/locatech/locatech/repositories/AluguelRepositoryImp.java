@@ -51,30 +51,32 @@ public class AluguelRepositoryImp implements  AluguelRepository{
     @Override
     public Integer save(Aluguel aluguel) {
         return this.jdbcClient
-                .sql("INSERT INTO pessoas (nome, cpf, telefone, email) VALUES (:nome, :cpf, :telefone, :email)")
-                .param("nome", pessoa.getNome())
-                .param("cpf", pessoa.getCpf())
-                .param("telefone", pessoa.getTelefone())
-                .param("email", pessoa.getEmail())
+                .sql("INSERT INTO alugueis (pessoa_id, veiculo_id, data_inicio, data_fim, valor_total) VALUES (:pessoa_id, :veiculo_id, :data_inicio, :data_fim, :valor_total)")
+                .param("pessoa_id", aluguel.getPessoaId())
+                .param("veiculo_id", aluguel.getVeiculoId())
+                .param("data_inicio", aluguel.getDataInicio())
+                .param("data_fim", aluguel.getDataFim())
+                .param("valor_total", aluguel.getValorTotal())
                 .update();
     }
 
     @Override
     public Integer update(Aluguel aluguel, Long id) {
         return this.jdbcClient
-                .sql("UPDATE pessoas SET nome = :nome, cpf = :cpf, telefone = :telefone, email = :email WHERE id = :id")
+                .sql("UPDATE alugueis SET pessoa_id = :pessoa_id, veiculo_id = :veiculo_id, data_inicio = :data_inicio, data_fim = :data_fim, valor_total = :valor_total WHERE id = :id")
                 .param("id", id)
-                .param("nome", pessoa.getNome())
-                .param("cpf", pessoa.getCpf())
-                .param("telefone", pessoa.getTelefone())
-                .param("email", pessoa.getEmail())
+                .param("pessoa_id", aluguel.getPessoaId())
+                .param("veiculo_id", aluguel.getVeiculoId())
+                .param("data_inicio", aluguel.getDataInicio())
+                .param("data_fim", aluguel.getDataFim())
+                .param("valor_total", aluguel.getValorTotal())
                 .update();
     }
 
     @Override
     public Integer delete(Long id) {
         return this.jdbcClient
-                .sql("DELETE FROM pessoas WHERE id = :id")
+                .sql("DELETE FROM alugueis WHERE id = :id")
                 .param("id", id)
                 .update();
     }
