@@ -24,7 +24,7 @@ public class AluguelService {
         return this.aluguelRepository.findAll(size, offset);
     }
 
-    public Optional<Aluguel> findPessoaById(Long id) {
+    public Optional<Aluguel> findAluguelById(Long id) {
         return this.aluguelRepository.findById(id);
     }
 
