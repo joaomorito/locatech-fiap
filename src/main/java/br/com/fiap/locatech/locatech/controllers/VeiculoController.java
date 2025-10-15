@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/veiculos")
+@RequestMapping("/v1/veiculos")
 @Tag(name = "Veículo", description = "Controle para crud de veículos")
 public class VeiculoController {
 

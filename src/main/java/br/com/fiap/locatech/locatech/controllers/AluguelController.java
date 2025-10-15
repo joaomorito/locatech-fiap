@@ -16,7 +16,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/alugueis")
+@RequestMapping("/v1/alugueis")
 @Tag(name = "Aluguéis", description = "Controle para crud de aluguéis")
 public class AluguelController {
 

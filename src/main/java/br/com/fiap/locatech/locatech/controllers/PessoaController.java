@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/pessoas")
+@RequestMapping("/v1/pessoas")
 @Tag(name = "Pessoa", description = "Controle para crud de pessoas")
 public class PessoaController {
 
